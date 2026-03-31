@@ -5,3 +5,4 @@ seaborn
 streamlit
 plotly
 altair<5
+imghdr
