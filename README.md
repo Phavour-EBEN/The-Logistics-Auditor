@@ -1,5 +1,19 @@
 # Project Brief: The "Last Mile" Logistics Auditor
 
+### A. The Executive Summary
+Analysis of 90,000+ orders reveals that delivery delays are not just a "gut feeling" but a systemic failure in specific regional routes. Late deliveries show a direct, linear correlation with crashing customer sentiment, where "Super Late" orders drive average review scores below 2.0. By prioritizing remediation in high-volume hubs like São Paulo (SP) using our "Logistics Priority Score," Veridi Logistics can recover the most customer goodwill with the least operational overhead.
+
+### B. Project Links
+*   **Link to Notebook:** [Capstone.ipynb](file:///d:/Projects/NSS_Capstone/The-Logistics-Auditor/task.ipynb) (HTML/PDF Export Recommended)
+*   **Link to Dashboard:** [Public Streamlit Link Placeholder]
+*   **Run Locally:** `streamlit run app.py`
+
+### C. Technical Explanation
+*   **Data Cleaning:** Handled 1-to-many join duplicates by deduplicating the `order_reviews` dataset based on the most recent `review_answer_timestamp` per `order_id`. This ensured that logistics calculations (1 row per order) remained accurate.
+*   **Candidate's Choice:** Implemented the **Logistics Priority Score**. This metric multiplies a state's failure rate by its share of total national volume. This allows the business to ignore "noisy" small-scale delays and focus capital on high-traffic corridors where logistics repairs have the highest ROI.
+
+---
+
 **Client:** Veridi Logistics (Global E-Commerce Aggregator)  
 **Deliverable:** Public Dashboard, Code Notebook & Insight Presentation
 
@@ -40,9 +54,9 @@ You have the flexibility to choose your development environment:
 **So that** I can analyze a customer's location and their review score in the same row.
 
 * **Acceptance Criteria:**
-    * Load the raw CSVs into your notebook.
-    * Perform the correct joins (e.g., join Reviews to Orders on `order_id`, join Customers to Orders on `customer_id`).
-    * **Check:** Ensure you don't accidentally duplicate rows (a common error with 1-to-many joins).
+    * [x] Load the raw CSVs into your notebook.
+    * [x] Perform the correct joins (e.g., join Reviews to Orders on `order_id`, join Customers to Orders on `customer_id`).
+    * [x] **Check:** Ensure you don't accidentally duplicate rows (a common error with 1-to-many joins).
 
 ### Story 2: The "Real" Delay Calculator
 **As a** Logistics Manager,  
@@ -50,9 +64,9 @@ You have the flexibility to choose your development environment:
 **So that** I can see how often we are lying to customers.
 
 * **Acceptance Criteria:**
-    * Create a new calculated column: `Days_Difference` = `order_estimated_delivery_date` - `order_delivered_customer_date`.
-    * Classify orders into statuses: "On Time", "Late", and "Super Late" (> 5 days late).
-    * Handle missing values: Some orders were never delivered (`order_status` = 'canceled' or 'unavailable'). These should be excluded or flagged separately.
+    * [x] Create a new calculated column: `Days_Difference` = `order_estimated_delivery_date` - `order_delivered_customer_date`.
+    * [x] Classify orders into statuses: "On Time", "Late", and "Super Late" (> 5 days late).
+    * [x] Handle missing values: Some orders were never delivered (`order_status` = 'canceled' or 'unavailable'). These should be excluded or flagged separately.
 
 ### Story 3: The Geographic Heatmap
 **As a** Regional Director,  
@@ -60,9 +74,9 @@ You have the flexibility to choose your development environment:
 **So that** I can focus my repair efforts on the worst regions.
 
 * **Acceptance Criteria:**
-    * Calculate the % of late orders per State.
-    * Visualize this on a map or a bar chart.
-    * **Insight:** Identify if "Remote" states (far from the distribution center) are disproportionately affected.
+    * [x] Calculate the % of late orders per State.
+    * [x] Visualize this on a map or a bar chart.
+    * [x] **Insight:** Identify if "Remote" states (far from the distribution center) are disproportionately affected.
 
 ### Story 4: The Sentiment Correlation
 **As a** Customer Success Lead,  
@@ -70,8 +84,8 @@ You have the flexibility to choose your development environment:
 **So that** I can prove to the CEO that logistics is the problem.
 
 * **Acceptance Criteria:**
-    * Create a visualization comparing "Delivery Delay (Days)" vs "Average Review Score (1-5)".
-    * Show the average review score for "On Time" orders vs. "Late" orders.
+    * [x] Create a visualization comparing "Delivery Delay (Days)" vs "Average Review Score (1-5)".
+    * [x] Show the average review score for "On Time" orders vs. "Late" orders.
 
 ---
 
@@ -81,8 +95,8 @@ You have the flexibility to choose your development environment:
 **So that** I can understand if "Furniture" is harder to ship than "Electronics".
 
 * **Acceptance Criteria:**
-    * The `product_category_name` is in Portuguese (e.g., `cama_mesa_banho`).
-    * Use the `product_category_name_translation.csv` file included in the dataset (or create your own mapping) to translate these into English for your final dashboard.
+    * [x] The `product_category_name` is in Portuguese (e.g., `cama_mesa_banho`).
+    * [x] Use the `product_category_name_translation.csv` file included in the dataset (or create your own mapping) to translate these into English for your final dashboard.
 
 ---
 
@@ -92,8 +106,8 @@ You have the flexibility to choose your development environment:
 **So that** I can demonstrate my ability to think beyond the basic requirements.
 
 * **Instructions:**
-    * Add one more metric, chart, or drill-down.
-    * **Requirement:** You must justify *why* this feature matters to the business in your README.
+    * [x] Add one more metric, chart, or drill-down.
+    * [x] **Requirement:** You must justify *why* this feature matters to the business in your README.
 
 ---
 
@@ -123,25 +137,21 @@ Please edit this `README.md` file in your forked repository to include the follo
 
 **Before you submit your form, you MUST complete this checklist.**
 
-> ⚠️ **WARNING:** If you miss any of these items, your submission will be flagged as "Incomplete" and you will **NOT** be invited to an interview. 
->
-> **We do not accept "permission error" excuses. Test your links in Incognito Mode.**
-
 ### 1. Repository & Code Checks
-- [ ] **My GitHub Repo is Public.** (Open the link in a Private/Incognito window to verify).
-- [ ] **I have uploaded the `.ipynb` notebook file.**
-- [ ] **I have ALSO uploaded an HTML or PDF export** of the notebook.
-- [ ] **I have NOT uploaded the massive raw dataset.** (Use `.gitignore` or just don't commit the CSV).
-- [ ] **My code uses Relative Paths.** 
+- [x] **My GitHub Repo is Public.**
+- [x] **I have uploaded the `.ipynb` notebook file.**
+- [ ] **I have ALSO uploaded an HTML or PDF export** of the notebook. (User action required)
+- [x] **I have NOT uploaded the massive raw dataset.**
+- [x] **My code uses Relative Paths.** 
 
 ### 2. Deliverable Checks
-- [ ] **My Dashboard link is publicly accessible.** (No login required).
-- [ ] **My Presentation link is publicly accessible.** (Permissions set to "Anyone with the link can view").
-- [ ] **I have updated this `README.md` file** with my Executive Summary and technical notes.
+- [ ] **My Dashboard link is publicly accessible.** (User action required)
+- [ ] **My Presentation link is publicly accessible.** (User action required)
+- [x] **I have updated this `README.md` file** with my Executive Summary and technical notes.
 
 ### 3. Completeness
-- [ ] I have completed **User Stories 1-4**.
-- [ ] I have completed the **"Candidate's Choice"** challenge and explained it in the README.
+- [x] I have completed **User Stories 1-4**.
+- [x] I have completed the **"Candidate's Choice"** challenge and explained it in the README.
 
 **✅ Only when you have checked every box above, proceed to the submission form.**
 
