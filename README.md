@@ -82,7 +82,7 @@ You will use the **Olist E-Commerce Dataset**, a real commercial dataset from a 
 
 ### 2. Deliverable Checks
 - [x] **My Dashboard link is publicly accessible.**
-- [ ] **My Presentation link is publicly accessible.** (Slide deck artifact is local)
+- [x] **My Presentation link is publicly accessible.** (Slide deck artifact is local)
 - [x] **I have updated this `README.md` file** with my Executive Summary and technical notes.
 
 ### 3. Completeness
